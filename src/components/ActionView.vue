@@ -1,7 +1,8 @@
 <template>
   <v-layout>
-    <v-btn v-on:click="addUser">User hinzufügen</v-btn>
-    <v-btn v-on:click="addItem">Item hinzufügen</v-btn>
+    <v-btn v-on:click="addUser">Add User</v-btn>
+    <v-btn v-on:click="addItem">Add Item</v-btn>
+    <v-btn v-on:click="changeItemName">Change Item Name</v-btn>
   </v-layout>
 </template>
 
@@ -18,11 +19,18 @@
       },
       addItem () {
         let id = Math.floor(Math.random() * 10000)
-        let userId = this.$store.getters.getRandomUserId
+        let userId = this.$store.getters['getRandomUserId']()
         this.$store.commit('addItem', {
           id: id,
           userId: userId,
-          name: 'Item ' + id
+          name: 'Item ' + id + ' - ' + userId
+        })
+      },
+      changeItemName () {
+        let itemId = this.$store.getters['getRandomItemId']()
+        this.$store.commit('changeItemName', {
+          id: itemId,
+          name: 'Yippy'
         })
       }
     }

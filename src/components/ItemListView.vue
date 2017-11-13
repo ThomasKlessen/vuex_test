@@ -1,8 +1,8 @@
 <template>
   <v-card>
-    <v-list two-line>
+    <v-list>
       <template v-for="item in getItems">
-        <v-subheader v-text="item.name"></v-subheader>
+        <h5 v-text="item.name"></h5>
       </template>
     </v-list>
   </v-card>
@@ -12,11 +12,6 @@
   export default {
     name: 'ItemListView',
     props: ['user'],
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js PWA'
-      }
-    },
     computed: {
       getItems () {
         let items = this.$store.getters['getItems']
