@@ -2,7 +2,7 @@
   <v-card>
     <v-list>
       <template v-for="item in getItems">
-        <h5 v-text="item.name"></h5>
+        <h3>{{item.name}}</h3>
       </template>
     </v-list>
   </v-card>

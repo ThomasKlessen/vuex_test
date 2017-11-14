@@ -14,7 +14,7 @@ import ItemListView from './ItemListView.vue'
 
 export default {
   components: {ItemListView},
-  name: 'MainView',
+  name: 'UserListView',
   computed: {
     getUsers () {
       return this.$store.getters['getUsers']
